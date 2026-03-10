@@ -1,40 +1,61 @@
-# Image Processing Benchmarking Project
+# 🖼️ Image Processing Benchmarking Project
 
-This project implements and compares the runtime execution of common image filters (Gaussian, Sobel, Median) using Pure Python, NumPy, and Cython.
+A high-performance benchmark suite designed to evaluate the execution disparity between different computational architectures when applying fundamental image processing filters.
 
-## Project Structure
+## 🚀 Key Highlights
 
-- `src/`: Source code.
-  - `main.py`: Main executable file to run and benchmark the algorithms.
-  - `filters_python.py`: Implementations relying purely on standard Python semantics.
-  - `filters_numpy.py`: Optimizations using purely NumPy vectorization.
-  - `filters_cython.pyx`: Heavily optimized compiled endpoints in C.
-  - `setup.py`: Cython build configuration.
-- `report/`: Analysis on runtime execution results.
-- `images/`: The source and results data.
+- **Performance Benchmarking:** Comparative analysis of **Pure Python**, **NumPy**, and **Cython**.
+- **Hybrid Implementation:** Utilizing C-extensions for maximum pixel-processing efficiency.
+- **Visual Analytics:** Automatic generation of performance charts and side-by-side filter comparisons.
+- **Dynamic Reporting:** Real-time generation of advanced technical reports based on benchmark telemetry.
 
-## Setup Instructions
+---
 
-**1. Install Python Dependencies**
-Ensure you have a Python `3.x` environment setup.
+## 🛠️ Tech Stack
+
+- **Language:** Python 3.12+
+- **Numerical Computing:** [NumPy](https://numpy.org/) for vectorized operations.
+- **Acceleration:** [Cython](https://cython.org/) for C-compiled performance.
+- **Visualization:** [Matplotlib](https://matplotlib.org/) for analytics and [OpenCV](https://opencv.org/) for image I/O.
+
+---
+
+## 📂 Project Structure
+
+- `src/`: Core source logic.
+  - `main.py`: Orchestrator for benchmarking and report generation.
+  - `filters_python.py`: Naive implementations (Baseline).
+  - `filters_numpy.py`: Vectorized optimizations.
+  - `filters_cython.pyx`: Heavily optimized C-compiled endpoints.
+  - `setup.py`: Compilation configuration for Cython modules.
+- `report/`: Dynamically generated technical analysis.
+- `images/`: Input source data and generated visual results.
+
+---
+
+## ⚙️ Setup & Execution
+
+### 1. Environment Setup
 
 ```bash
 pip install -r requirements.txt
 ```
 
-**2. Compile Cython Extentisions**
-You must compile the Cython file prior to execution:
+### 2. Compile Optimization Layer (Required)
+
+The Cython extensions must be compiled locally to match your architecture:
 
 ```bash
 cd src
 python setup.py build_ext --inplace
 ```
 
-**3. Run the Benchmark**
-With a sample image located inside `images/input/sample.jpg`, execute the pipeline:
+### 3. Run the Suite
+
+Execute the pipeline to process images, run benchmarks, and generate the final report:
 
 ```bash
 python main.py
 ```
 
-Results are saved under `images/output/`.
+Results and visual comparisons will be saved under `images/output/`, and the deep-dive analysis will be updated in `report/Analysis_Report.md`.
